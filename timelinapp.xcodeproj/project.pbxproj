@@ -9,21 +9,55 @@
 /* Begin PBXBuildFile section */
 		9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212A2B644DE1007814A8 /* AppDelegate.swift */; };
 		9087212D2B644DE1007814A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212C2B644DE1007814A8 /* SceneDelegate.swift */; };
-		9087212F2B644DE1007814A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212E2B644DE1007814A8 /* ViewController.swift */; };
-		908721322B644DE1007814A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908721302B644DE1007814A8 /* Main.storyboard */; };
 		908721342B644DE3007814A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908721332B644DE3007814A8 /* Assets.xcassets */; };
 		908721372B644DE3007814A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908721352B644DE3007814A8 /* LaunchScreen.storyboard */; };
+		908721622B644EE9007814A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9087215A2B644EE9007814A8 /* GoogleService-Info.plist */; };
+		9088A3D42B6450D600A91E92 /* TLAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3CC2B6450D500A91E92 /* TLAvatar.swift */; };
+		9088A3D72B6450D600A91E92 /* TLBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3D12B6450D500A91E92 /* TLBadge.swift */; };
+		9088A3DD2B6450E000A91E92 /* TabBarNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3DB2B6450DF00A91E92 /* TabBarNavigator.swift */; };
+		9088A3DE2B6450E000A91E92 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3DC2B6450E000A91E92 /* HomeVC.swift */; };
+		9088A3E02B6450E400A91E92 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3DF2B6450E400A91E92 /* UIColor+Ext.swift */; };
+		9088A3E42B6450E900A91E92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E12B6450E900A91E92 /* Constants.swift */; };
+		9088A3E52B6450E900A91E92 /* PreviewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E22B6450E900A91E92 /* PreviewUI.swift */; };
+		9088A3E62B6450E900A91E92 /* TLPresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E32B6450E900A91E92 /* TLPresentableView.swift */; };
+		9088A3EA2B6450EF00A91E92 /* TLColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E82B6450EF00A91E92 /* TLColours.swift */; };
+		9088A3EB2B6450EF00A91E92 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E72B6450EF00A91E92 /* UIHelper.swift */; };
+		9088A3EC2B6450EF00A91E92 /* TLSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E92B6450EF00A91E92 /* TLSpacing.swift */; };
+		9088A3EE2B6450F400A91E92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3ED2B6450F400A91E92 /* NetworkManager.swift */; };
+		9088A3F52B64519400A91E92 /* TLCarousel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3F42B64519400A91E92 /* TLCarousel+Ext.swift */; };
+		9088A3F62B64519400A91E92 /* TLTodoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3EF2B64519300A91E92 /* TLTodoCard.swift */; };
+		9088A3F72B64519400A91E92 /* TLTodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3F12B64519300A91E92 /* TLTodoCell.swift */; };
+		9088A3F82B64519400A91E92 /* TLCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3F22B64519300A91E92 /* TLCarousel.swift */; };
+		9088A3F92B64519400A91E92 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3F32B64519400A91E92 /* TLButton.swift */; };
+		9088A3FA2B64519400A91E92 /* TLTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3F02B64519300A91E92 /* TLTypography.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		908721272B644DE1007814A8 /* timelinIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelinIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		908721272B644DE1007814A8 /* timelinapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelinapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9087212A2B644DE1007814A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9087212C2B644DE1007814A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9087212E2B644DE1007814A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		908721312B644DE1007814A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		908721332B644DE3007814A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		908721362B644DE3007814A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		908721382B644DE3007814A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9087215A2B644EE9007814A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9088A3CC2B6450D500A91E92 /* TLAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLAvatar.swift; sourceTree = "<group>"; };
+		9088A3D12B6450D500A91E92 /* TLBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLBadge.swift; sourceTree = "<group>"; };
+		9088A3DB2B6450DF00A91E92 /* TabBarNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigator.swift; sourceTree = "<group>"; };
+		9088A3DC2B6450E000A91E92 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		9088A3DF2B6450E400A91E92 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		9088A3E12B6450E900A91E92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9088A3E22B6450E900A91E92 /* PreviewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewUI.swift; sourceTree = "<group>"; };
+		9088A3E32B6450E900A91E92 /* TLPresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPresentableView.swift; sourceTree = "<group>"; };
+		9088A3E72B6450EF00A91E92 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		9088A3E82B6450EF00A91E92 /* TLColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLColours.swift; sourceTree = "<group>"; };
+		9088A3E92B6450EF00A91E92 /* TLSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSpacing.swift; sourceTree = "<group>"; };
+		9088A3ED2B6450F400A91E92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9088A3EF2B64519300A91E92 /* TLTodoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoCard.swift; sourceTree = "<group>"; };
+		9088A3F02B64519300A91E92 /* TLTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTypography.swift; sourceTree = "<group>"; };
+		9088A3F12B64519300A91E92 /* TLTodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoCell.swift; sourceTree = "<group>"; };
+		9088A3F22B64519300A91E92 /* TLCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCarousel.swift; sourceTree = "<group>"; };
+		9088A3F32B64519400A91E92 /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
+		9088A3F42B64519400A91E92 /* TLCarousel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TLCarousel+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +82,7 @@
 		908721282B644DE1007814A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				908721272B644DE1007814A8 /* timelinIOS.app */,
+				908721272B644DE1007814A8 /* timelinapp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,10 +90,17 @@
 		908721292B644DE1007814A8 /* timelinIOS */ = {
 			isa = PBXGroup;
 			children = (
+				9088A4022B64526E00A91E92 /* Tokens */,
+				9088A4012B64525400A91E92 /* View Models */,
+				9088A4002B64523000A91E92 /* Models */,
+				9088A3FF2B64522700A91E92 /* Managers */,
+				9088A3FE2B64521600A91E92 /* Helpers */,
+				9088A3FD2B6451F100A91E92 /* Extensions */,
+				9088A3FC2B6451D800A91E92 /* Controllers */,
+				9088A3FB2B6451AB00A91E92 /* Views */,
+				9087215A2B644EE9007814A8 /* GoogleService-Info.plist */,
 				9087212A2B644DE1007814A8 /* AppDelegate.swift */,
 				9087212C2B644DE1007814A8 /* SceneDelegate.swift */,
-				9087212E2B644DE1007814A8 /* ViewController.swift */,
-				908721302B644DE1007814A8 /* Main.storyboard */,
 				908721332B644DE3007814A8 /* Assets.xcassets */,
 				908721352B644DE3007814A8 /* LaunchScreen.storyboard */,
 				908721382B644DE3007814A8 /* Info.plist */,
@@ -67,12 +108,86 @@
 			path = timelinIOS;
 			sourceTree = "<group>";
 		};
+		9088A3FB2B6451AB00A91E92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3CC2B6450D500A91E92 /* TLAvatar.swift */,
+				9088A3D12B6450D500A91E92 /* TLBadge.swift */,
+				9088A3F32B64519400A91E92 /* TLButton.swift */,
+				9088A3F22B64519300A91E92 /* TLCarousel.swift */,
+				9088A3F42B64519400A91E92 /* TLCarousel+Ext.swift */,
+				9088A3EF2B64519300A91E92 /* TLTodoCard.swift */,
+				9088A3F12B64519300A91E92 /* TLTodoCell.swift */,
+				9088A3F02B64519300A91E92 /* TLTypography.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9088A3FC2B6451D800A91E92 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3DC2B6450E000A91E92 /* HomeVC.swift */,
+				9088A3DB2B6450DF00A91E92 /* TabBarNavigator.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9088A3FD2B6451F100A91E92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3DF2B6450E400A91E92 /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9088A3FE2B64521600A91E92 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3E12B6450E900A91E92 /* Constants.swift */,
+				9088A3E22B6450E900A91E92 /* PreviewUI.swift */,
+				9088A3E32B6450E900A91E92 /* TLPresentableView.swift */,
+				9088A3E72B6450EF00A91E92 /* UIHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9088A3FF2B64522700A91E92 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3ED2B6450F400A91E92 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9088A4002B64523000A91E92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9088A4012B64525400A91E92 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		9088A4022B64526E00A91E92 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				9088A3E82B6450EF00A91E92 /* TLColours.swift */,
+				9088A3E92B6450EF00A91E92 /* TLSpacing.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		908721262B644DE1007814A8 /* timelinIOS */ = {
+		908721262B644DE1007814A8 /* timelinapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9087213B2B644DE3007814A8 /* Build configuration list for PBXNativeTarget "timelinIOS" */;
+			buildConfigurationList = 9087213B2B644DE3007814A8 /* Build configuration list for PBXNativeTarget "timelinapp" */;
 			buildPhases = (
 				908721232B644DE1007814A8 /* Sources */,
 				908721242B644DE1007814A8 /* Frameworks */,
@@ -82,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = timelinIOS;
+			name = timelinapp;
 			productName = timelinIOS;
-			productReference = 908721272B644DE1007814A8 /* timelinIOS.app */;
+			productReference = 908721272B644DE1007814A8 /* timelinapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 908721222B644DE1007814A8 /* Build configuration list for PBXProject "timelinIOS" */;
+			buildConfigurationList = 908721222B644DE1007814A8 /* Build configuration list for PBXProject "timelinapp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				908721262B644DE1007814A8 /* timelinIOS */,
+				908721262B644DE1007814A8 /* timelinapp */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +242,7 @@
 			files = (
 				908721372B644DE3007814A8 /* LaunchScreen.storyboard in Resources */,
 				908721342B644DE3007814A8 /* Assets.xcassets in Resources */,
-				908721322B644DE1007814A8 /* Main.storyboard in Resources */,
+				908721622B644EE9007814A8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +253,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9087212F2B644DE1007814A8 /* ViewController.swift in Sources */,
+				9088A3D42B6450D600A91E92 /* TLAvatar.swift in Sources */,
+				9088A3EE2B6450F400A91E92 /* NetworkManager.swift in Sources */,
+				9088A3D72B6450D600A91E92 /* TLBadge.swift in Sources */,
+				9088A3DE2B6450E000A91E92 /* HomeVC.swift in Sources */,
+				9088A3E42B6450E900A91E92 /* Constants.swift in Sources */,
+				9088A3EA2B6450EF00A91E92 /* TLColours.swift in Sources */,
+				9088A3E02B6450E400A91E92 /* UIColor+Ext.swift in Sources */,
+				9088A3F92B64519400A91E92 /* TLButton.swift in Sources */,
+				9088A3EC2B6450EF00A91E92 /* TLSpacing.swift in Sources */,
+				9088A3E62B6450E900A91E92 /* TLPresentableView.swift in Sources */,
+				9088A3F52B64519400A91E92 /* TLCarousel+Ext.swift in Sources */,
+				9088A3F72B64519400A91E92 /* TLTodoCell.swift in Sources */,
+				9088A3E52B6450E900A91E92 /* PreviewUI.swift in Sources */,
+				9088A3F62B64519400A91E92 /* TLTodoCard.swift in Sources */,
+				9088A3F82B64519400A91E92 /* TLCarousel.swift in Sources */,
 				9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */,
+				9088A3FA2B64519400A91E92 /* TLTypography.swift in Sources */,
 				9087212D2B644DE1007814A8 /* SceneDelegate.swift in Sources */,
+				9088A3EB2B6450EF00A91E92 /* UIHelper.swift in Sources */,
+				9088A3DD2B6450E000A91E92 /* TabBarNavigator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		908721302B644DE1007814A8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				908721312B644DE1007814A8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		908721352B644DE3007814A8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +421,6 @@
 				INFOPLIST_FILE = timelinIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +448,6 @@
 				INFOPLIST_FILE = timelinIOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		908721222B644DE1007814A8 /* Build configuration list for PBXProject "timelinIOS" */ = {
+		908721222B644DE1007814A8 /* Build configuration list for PBXProject "timelinapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				908721392B644DE3007814A8 /* Debug */,
@@ -353,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9087213B2B644DE3007814A8 /* Build configuration list for PBXNativeTarget "timelinIOS" */ = {
+		9087213B2B644DE3007814A8 /* Build configuration list for PBXNativeTarget "timelinapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9087213C2B644DE3007814A8 /* Debug */,
