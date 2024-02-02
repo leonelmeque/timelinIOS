@@ -7,8 +7,8 @@ class HomeVC: UIViewController {
     }
     
     var tableView = UITableView(frame: .zero, style: .grouped)
-    var todos: [String] = ["ios","react native","figma", "javascript", "CSS3", "NextJs", "Android", "Rust"]
-    
+    var todos = [Todo]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -42,7 +42,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TLCarousel.identifier, for: indexPath) as? TLCarousel else {return UITableViewCell()}
         
-        cell.initCell(with: todos)
+      cell.initCell(with: todos) { id in
+
+      }
         return cell
     }
     
