@@ -28,6 +28,16 @@ class TLButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                fadeTo(0.5, duration: 0.1)
+            } else {
+                fadeTo(1.0, duration: 0.1)
+            }
+        }
+    }
+    
     convenience init (label: String, variant: ButtonVariant, size: ButtonSize){
         self.init(frame: .zero)
         
@@ -37,6 +47,7 @@ class TLButton: UIButton {
         
         configureSize()
         configureVariant()
+       
     }
     
     private func configure(){
@@ -67,7 +78,6 @@ class TLButton: UIButton {
     private func configureVariant(){
         switch variant {
             case .primary:
-                print(TLColours.Primary.p500.color)
                 self.backgroundColor = TLColours.Primary.p300.color
             case .secondary:
                 self.backgroundColor = TLColours.Primary.p75.color
@@ -77,6 +87,12 @@ class TLButton: UIButton {
                 self.backgroundColor = TLColours.Greys.g50.color
             case .none:
                 break
+        }
+    }
+    
+    private func fadeTo(_ alpha:CGFloat, duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.alpha = alpha
         }
     }
 }

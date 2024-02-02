@@ -3,7 +3,8 @@ import UIKit
 class TLCarousel: UITableViewCell {
     static let identifier = "TLTodoCarouselCell"
     
-    var data: [String] = []
+    var data: [Todo] = []
+    var tapableAction: ((_ id: String) -> Void)!
 
     let collectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,7 +19,7 @@ class TLCarousel: UITableViewCell {
         container.translatesAutoresizingMaskIntoConstraints = false
         container.clipsToBounds = true
         
-        container.register(TLTodoCell.self, forCellWithReuseIdentifier: TLTodoCell.identifier)
+        container.register(TLTodoCardCell.self, forCellWithReuseIdentifier: TLTodoCardCell.identifier)
         
         return container
     }()
@@ -34,7 +35,6 @@ class TLCarousel: UITableViewCell {
     }
     
     private func configure(){
-        
         collectionView.bounds = contentView.bounds
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -43,8 +43,9 @@ class TLCarousel: UITableViewCell {
         UIHelper.toCenter(this: collectionView, into: contentView)
     }
     
-     func initCell(with data: [String]){
+  func initCell(with data: [Todo], tapableAction: @escaping (_ id: String) -> Void){
          self.data = data
+         self.tapableAction = tapableAction
          DispatchQueue.main.async {
              [weak self] in self?.collectionView.reloadData()
          }

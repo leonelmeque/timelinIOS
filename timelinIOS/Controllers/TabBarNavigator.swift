@@ -15,7 +15,7 @@ class TabBarNavigator: UITabBarController {
     
     private func configureTabs() {
         let homeTab = UINavigationController(rootViewController: HomeVC())
-        let addTodoTab = UINavigationController(rootViewController: HomeVC())
+        let addTodoTab = UINavigationController(rootViewController: TodoDetailsVC())
         let settingsTab = UINavigationController(rootViewController: HomeVC())
         
         homeTab.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "list.clipboard"), tag:0)

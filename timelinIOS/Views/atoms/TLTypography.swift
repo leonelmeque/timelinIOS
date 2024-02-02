@@ -24,15 +24,14 @@ class TLTypography: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(title: String, fontSize: TypographySize, colour: UIColor?){
+    convenience init(title: String, fontSize: TypographySize, colour: UIColor? = .label, weight: UIFont.Weight? = .regular){
         self.init(frame: .zero)
         text = title
-        font = UIFont.systemFont(ofSize: fontSize.value, weight: .bold)
+        font = UIFont.systemFont(ofSize: fontSize.value, weight: weight ?? .regular)
         adjustsFontForContentSizeCategory = true
-        adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping
-        
+        textColor = colour
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

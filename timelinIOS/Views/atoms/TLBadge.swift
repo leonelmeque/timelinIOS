@@ -30,7 +30,7 @@ class TLBadge: UIView {
         layer.cornerRadius = .infinity
         backgroundColor = .systemRed
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             self.widthAnchor.constraint(equalToConstant: 200),
             self.heightAnchor.constraint(equalToConstant: 200)
@@ -43,7 +43,6 @@ class TLBadge: UIView {
         label.text = "Something"
         addSubview(label)
         
-        print(layer.frame.width, layer.frame.height)
     }
 }
 

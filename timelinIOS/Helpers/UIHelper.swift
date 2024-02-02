@@ -22,7 +22,12 @@ class UIHelper {
             child.trailingAnchor.constraint(equalTo: parent.trailingAnchor, constant: -pLeft),
             child.bottomAnchor.constraint(equalTo: parent.bottomAnchor, constant: pBottom)
         ])
-        
-        
     }
+
+  static func setIconSizeContraints(for icon: UIImageView, size: CGFloat) {
+    NSLayoutConstraint.activate([
+      icon.widthAnchor.constraint(equalToConstant: size),
+      icon.heightAnchor.constraint(equalToConstant: size)
+    ])
+  }
 }
