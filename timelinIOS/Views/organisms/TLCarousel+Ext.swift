@@ -10,7 +10,8 @@ extension TLCarousel: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TLTodoCardCell.identifier, for: indexPath)
                 as? TLTodoCardCell else {return UICollectionViewCell()}
 
-      let card = TLTodoCard(title: data[indexPath.row].todo , description: "To be added", colour: .orange, createdAt: data[indexPath.row].timestamp)
+      let todo = data[indexPath.row]
+      let card = TLTodoCard(title: todo.todo , description: "To be added", colour: .orange, createdAt: Date.dateFormatter(from: Double(todo.timestamp)))
 
         cell.configure(with: card)
 
