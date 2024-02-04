@@ -15,9 +15,32 @@ extension NetworkManager {
                 data.append(decodedObject)
             }
             return data
-        }catch {
+        } catch {
             print(error)
             return data
         }
     }
+
+  func getPinnedAndRecentlyChangedTodo() async throws -> TodoForSection? {
+    var data: TodoForSection?
+
+    do{
+      let querySnapshot = try await db.collection("todos").document("I83gWNye5ibHcaGNCzh6S4z66492").getDocument()
+
+      let decoder = JSONDecoder()
+      let jsonData = try JSONSerialization.data(withJSONObject: querySnapshot.data())
+
+      let decodedObject = try decoder.decode(TodoForSection.self, from: jsonData)
+
+      data = decodedObject
+
+    } catch{
+      print(error)
+
+    }
+
+    return data
+  }
+
+
 }

@@ -32,6 +32,9 @@
 		903522322B6D29D8008A8D4B /* TLNewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035222A2B6D29D7008A8D4B /* TLNewTodoView.swift */; };
 		903522332B6D29D8008A8D4B /* TLTodoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522272B6D29D6008A8D4B /* TLTodoCard.swift */; };
 		903522372B6D2DDB008A8D4B /* TLTodoCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522362B6D2DDB008A8D4B /* TLTodoCardCell.swift */; };
+		9035223D2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */; };
+		9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */; };
+		903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522422B6FA072008A8D4B /* Date+Ext.swift */; };
 		9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212A2B644DE1007814A8 /* AppDelegate.swift */; };
 		9087212D2B644DE1007814A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212C2B644DE1007814A8 /* SceneDelegate.swift */; };
 		908721342B644DE3007814A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908721332B644DE3007814A8 /* Assets.xcassets */; };
@@ -78,6 +81,9 @@
 		9035222A2B6D29D7008A8D4B /* TLNewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNewTodoView.swift; sourceTree = "<group>"; };
 		9035222B2B6D29D7008A8D4B /* TLCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCarousel.swift; sourceTree = "<group>"; };
 		903522362B6D2DDB008A8D4B /* TLTodoCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTodoCardCell.swift; sourceTree = "<group>"; };
+		9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedTodoSectionView.swift; sourceTree = "<group>"; };
+		9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyChangedSectionView.swift; sourceTree = "<group>"; };
+		903522422B6FA072008A8D4B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		908721272B644DE1007814A8 /* timelinapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelinapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9087212A2B644DE1007814A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9087212C2B644DE1007814A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 				903522362B6D2DDB008A8D4B /* TLTodoCardCell.swift */,
 				903522222B6D29C6008A8D4B /* TLLoginFormView.swift */,
 				903522272B6D29D6008A8D4B /* TLTodoCard.swift */,
+				9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */,
+				9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */,
 			);
 			path = organisms;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 				903522002B6D1E3E008A8D4B /* UIButton+Ext.swift */,
 				903521FD2B6D1E3E008A8D4B /* UIViewController+Ext.swift */,
 				9088A3DF2B6450E400A91E92 /* UIColor+Ext.swift */,
+				903522422B6FA072008A8D4B /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,9 +425,11 @@
 				903522042B6D1E3E008A8D4B /* UIButton+Ext.swift in Sources */,
 				903522212B6D29C3008A8D4B /* TLAvatar.swift in Sources */,
 				9088A3E02B6450E400A91E92 /* UIColor+Ext.swift in Sources */,
+				903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */,
 				903522372B6D2DDB008A8D4B /* TLTodoCardCell.swift in Sources */,
 				903522232B6D29C7008A8D4B /* TLLoginFormView.swift in Sources */,
 				9088A3EC2B6450EF00A91E92 /* TLSpacing.swift in Sources */,
+				9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */,
 				9035222D2B6D29D8008A8D4B /* TLPinnedTodosSection.swift in Sources */,
 				903522322B6D29D8008A8D4B /* TLNewTodoView.swift in Sources */,
 				9035220F2B6D1E89008A8D4B /* UIHelper.swift in Sources */,
@@ -426,6 +437,7 @@
 				9035221D2B6D29C0008A8D4B /* TLButton.swift in Sources */,
 				9088A3E62B6450E900A91E92 /* TLPresentableView.swift in Sources */,
 				903522122B6D1F38008A8D4B /* AuthAPI.swift in Sources */,
+				9035223D2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift in Sources */,
 				9088A3E52B6450E900A91E92 /* PreviewUI.swift in Sources */,
 				903522032B6D1E3E008A8D4B /* String+Ext.swift in Sources */,
 				9035221C2B6D29C0008A8D4B /* TLTypography.swift in Sources */,
