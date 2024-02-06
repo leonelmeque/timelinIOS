@@ -25,6 +25,8 @@ class TodoDetailsVC: UIViewController, UIScrollViewDelegate {
 
   lazy var simpleTimelineView = TLSimpleTimelineView()
 
+  lazy var todoStatusBadge = TLBadge(status: .todo, variant: .colored)
+
 
   lazy var timelineHorizontalLine = UIView()
 
@@ -51,6 +53,7 @@ class TodoDetailsVC: UIViewController, UIScrollViewDelegate {
     createTimeline()
     setupEndDateRow()
     setuptextChangeTodoStatusButton()
+    setupTodoStatusBadge()
   }
 
   private func configuration(){
@@ -236,6 +239,17 @@ class TodoDetailsVC: UIViewController, UIScrollViewDelegate {
     NSLayoutConstraint.activate([
       textChangeTodoStatusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -TLSpacing.s16.size),
       textChangeTodoStatusButton.centerXAnchor.constraint(equalTo: container.centerXAnchor)
+    ])
+  }
+
+  private func setupTodoStatusBadge() {
+    container.addSubview(todoStatusBadge)
+
+    todoStatusBadge.translatesAutoresizingMaskIntoConstraints = false
+
+    NSLayoutConstraint.activate([
+      todoStatusBadge.topAnchor.constraint(equalTo: endDateLabel.bottomAnchor, constant: sectionSpacing),
+      todoStatusBadge.leadingAnchor.constraint(equalTo: endDateLabel.leadingAnchor),
     ])
   }
 
