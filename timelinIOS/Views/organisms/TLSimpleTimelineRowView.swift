@@ -1,9 +1,9 @@
 import UIKit
 
-class TLSimpleTimelineView: UIView {
-
+class TLSimpleTimelineRowView: UIView {
   lazy var circleDot = UIView()
-  lazy var horizontalLine = UIView()
+  lazy var isNewTag = UIView()
+  lazy var isNewUpdate = false
   var date = TLTypography()
   var todo = TLTypography()
 
@@ -22,11 +22,7 @@ class TLSimpleTimelineView: UIView {
     circleDot.backgroundColor = TLColours.Primary.p75.color
     circleDot.translatesAutoresizingMaskIntoConstraints = false
 
-    horizontalLine.backgroundColor = TLColours.Primary.p75.color
-    horizontalLine.translatesAutoresizingMaskIntoConstraints = false
-
     addSubview(circleDot)
-    addSubview(horizontalLine)
 
     NSLayoutConstraint.activate([
       circleDot.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
@@ -34,14 +30,10 @@ class TLSimpleTimelineView: UIView {
       circleDot.widthAnchor.constraint(equalToConstant: TLSpacing.s16.size),
       circleDot.heightAnchor.constraint(equalToConstant: TLSpacing.s16.size),
 
-      horizontalLine.centerXAnchor.constraint(equalTo: circleDot.centerXAnchor),
-      horizontalLine.topAnchor.constraint(equalTo: circleDot.bottomAnchor),
-      horizontalLine.widthAnchor.constraint(equalToConstant: 4),
-      horizontalLine.heightAnchor.constraint(equalToConstant: 40)
     ])
   }
 
-  func setRowDateWithTitle(timestamp: Double, title: String){
+  func setRowDateWithTitle(timestamp: Double, title: String) {
     let fontSystem = UIFont.systemFont(ofSize: TLSpacing.s16.size, weight: .bold)
     date.text = Date.dateFormatter(from: timestamp)
     date.font = fontSystem
@@ -63,21 +55,50 @@ class TLSimpleTimelineView: UIView {
       todo.centerYAnchor.constraint(equalTo: circleDot.centerYAnchor),
       todo.leadingAnchor.constraint(equalTo: date.trailingAnchor, constant: TLSpacing.s8.size)
     ])
+
+    if  Utils.checkIfUpdateIsRecent(with: timestamp) {
+      configureIsNewTag()
+    }
+
   }
 
-  func createTimeline() {
+  func configureIsNewTag() {
+    let padding = TLSpacing.s4.size
+    let label = TLTypography(title: "New", fontSize: .body, colour: TLColours.Success.s300.color)
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
 
+    isNewTag.backgroundColor = TLColours.Success.s50.color
+    isNewTag.layer.cornerRadius = TLSpacing.s8.size
+    isNewTag.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(isNewTag)
+    isNewTag.addSubview(label)
+
+    NSLayoutConstraint.activate([
+      isNewTag.leadingAnchor.constraint(equalTo: todo.trailingAnchor, constant: TLSpacing.s8.size),
+      isNewTag.centerYAnchor.constraint(equalTo: todo.centerYAnchor),
+      label.centerYAnchor.constraint(equalTo: isNewTag.centerYAnchor)
+    ])
+
+    UIHelper.toCenter(this: label, into: isNewTag){
+      return (padding, padding, padding, -padding)
+    }
   }
 }
 
 
-
 #Preview {
-  let card = TLSimpleTimelineView()
-  card.setRowDateWithTitle(timestamp: 1693957505641, title: "Glopi orders")
-  NSLayoutConstraint.activate(
-      [card.heightAnchor.constraint(equalToConstant: 200),
-       card.widthAnchor.constraint(equalToConstant: 280)])
+  let timelineRow = TLSimpleTimelineRowView()
+  
+  let currentDate = Date()
+  let threeDaysInSeconds: TimeInterval = 3 * 24 * 60 * 60
+  let lessThanThreeDaysAgoTimestampMilliseconds = currentDate.timeIntervalSince1970 - threeDaysInSeconds
 
-  return card
+  timelineRow.setRowDateWithTitle(timestamp: lessThanThreeDaysAgoTimestampMilliseconds * 1000, title: "Glopi orders")
+
+  NSLayoutConstraint.activate(
+      [timelineRow.heightAnchor.constraint(equalToConstant: 80),
+       timelineRow.widthAnchor.constraint(equalToConstant: 300)])
+
+  return timelineRow
 }
