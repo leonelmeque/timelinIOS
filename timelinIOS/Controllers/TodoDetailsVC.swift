@@ -1,43 +1,68 @@
-//
-//  TodoDetailsVC.swift
-//  timelinapp
-//
-//  Created by Leonel Meque on 1/2/24.
-//
-
 import UIKit
 
-class TodoDetailsVC: UIViewController {
+class TodoDetailsVC: UIViewController, UIScrollViewDelegate {
 
-   var container = UIScrollView()
+  var container = UIScrollView()
 
-   lazy var viewIdentifier = [String: UIView]()
+  lazy var viewIdentifier = [String: UIView]()
 
-   lazy var noteIcon = UIImage(named: "note.text")
-   lazy var personsIcon = UIImage(named: "person.2.fill")
+  lazy var noteIcon = UIImage(named: "note.text")
+  lazy var personsIcon = UIImage(named: "person.2.fill")
 
-   lazy var motivationText = TLTypography(title: "", fontSize: .body, weight: .regular)
-   lazy var startDateLabel = TLTypography(title: "Has not started", fontSize: .body, weight: .bold)
-   lazy var endDateLabel = TLTypography(title: "No deadline", fontSize: .body, weight: .bold)
+  lazy var motivationText = TLTypography(title: "", fontSize: .body, weight: .regular)
 
-   lazy var descriptionTextInput = UITextField()
+  lazy var startDateLabel = TLCustomDateTextField(label: "", color: TLColours.TodoPalette.green.color)
+  lazy var startDatePicker = UIDatePicker()
 
-   lazy var stackViewPadding = TLSpacing.s16.size
+  lazy var endDateLabel = TLCustomDateTextField(label: "", color: TLColours.TodoPalette.orange.color)
+  lazy var endDatePicker = UIDatePicker()
 
-   lazy var ICON_SIZE = TLSpacing.s40.size
+  lazy var textChangeTodoStatusButton = TLTypography(title: "Update progress", fontSize: .body, colour: TLColours.Primary.p300.color, weight: .bold )
 
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      configureHeader()
-      configureScrollView()
-      setupTodoDetailsRow()
-      setupStartDateRow()
-      setupEndDateRow()
-    }
+  lazy var descriptionTextInput = UITextField()
+  lazy var todoNameTextInput = UITextField()
+  lazy var stackViewPadding = TLSpacing.s16.size
+
+  lazy var simpleTimelineView = TLSimpleTimelineView()
 
 
-  private func configure(){
-    
+  lazy var timelineHorizontalLine = UIView()
+
+  lazy var sectionSpacing: CGFloat = TLSpacing.s24.size
+  lazy var timelineRowViews = [
+    TLSimpleTimelineRowView(),
+    TLSimpleTimelineRowView(),
+    TLSimpleTimelineRowView(),
+    TLSimpleTimelineRowView(),
+    TLSimpleTimelineRowView()
+  ]
+
+  lazy var ICON_SIZE = TLSpacing.s32.size
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configuration()
+    configureHeader()
+    configureScrollView()
+    configureMotivationText()
+    configureTodoNameRow()
+    setupTodoDetailsRow()
+    setupStartDateRow()
+    createTimeline()
+    setupEndDateRow()
+    setuptextChangeTodoStatusButton()
+  }
+
+  private func configuration(){
+    container.delegate = self
+    view.backgroundColor = .systemBackground
+
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewWasTapped))
+    view.addGestureRecognizer(tapGesture)
+  }
+
+ @objc private func viewWasTapped(gestureRecognizer: UITapGestureRecognizer) {
+    view.endEditing(true)
   }
 
   private func configureHeader() {
@@ -56,13 +81,42 @@ class TodoDetailsVC: UIViewController {
     }
   }
 
-  private func configureTodoNameRow(){
+  private func configureMotivationText(){
+    motivationText.translatesAutoresizingMaskIntoConstraints = false
+    motivationText.text = "You rock!"
+  
+    container.addSubview(motivationText)
+    
+    NSLayoutConstraint.activate([
+      motivationText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: TLSpacing
+        .s16.size),
+      motivationText.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: ICON_SIZE + TLSpacing.s16.size),
+      motivationText.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -TLSpacing.s16.size),
+    ])
+  }
 
+  private func configureTodoNameRow(){
+    todoNameTextInput.placeholder = "Write something like Glopi is cool"
+    todoNameTextInput.translatesAutoresizingMaskIntoConstraints = false
+    container.addSubview(todoNameTextInput)
+
+    viewIdentifier["todoNameTextInput"] = todoNameTextInput
+
+    NSLayoutConstraint.activate([
+      todoNameTextInput.topAnchor.constraint(equalTo: motivationText.topAnchor, constant: sectionSpacing),
+      todoNameTextInput.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: ICON_SIZE + TLSpacing.s16.size),
+      todoNameTextInput.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -TLSpacing.s16.size),
+      todoNameTextInput.heightAnchor.constraint(equalToConstant: 52)
+    ])
   }
 
   private func setupTodoDetailsRow() {
-    let timelineIcon = UIImageView(image: UIImage(named: "calendar.day.timeline.left"))
+    let timelineIcon = UIImageView(image: UIImage(systemName: "calendar.day.timeline.left"))
+    timelineIcon.tintColor = .label
+
     descriptionTextInput.translatesAutoresizingMaskIntoConstraints = false
+    timelineIcon.translatesAutoresizingMaskIntoConstraints = false
+    descriptionTextInput.placeholder = "Write a cool description"
     container.addSubview(timelineIcon)
     container.addSubview(descriptionTextInput)
 
@@ -70,9 +124,9 @@ class TodoDetailsVC: UIViewController {
 
     UIHelper.setIconSizeContraints(for: timelineIcon,size: ICON_SIZE )
     NSLayoutConstraint.activate([
-      timelineIcon.topAnchor.constraint(equalTo: container.topAnchor, constant: 100),
+      timelineIcon.topAnchor.constraint(equalTo: todoNameTextInput.bottomAnchor, constant: sectionSpacing),
       timelineIcon.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-      descriptionTextInput.leadingAnchor.constraint(equalTo: timelineIcon.trailingAnchor, constant: TLSpacing.s8.size),
+      descriptionTextInput.leadingAnchor.constraint(equalTo: timelineIcon.trailingAnchor, constant: TLSpacing.s16.size),
       descriptionTextInput.heightAnchor.constraint(equalToConstant: 52),
       descriptionTextInput.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -TLSpacing.s16.size),
       descriptionTextInput.centerYAnchor.constraint(equalTo: timelineIcon.centerYAnchor)
@@ -81,72 +135,128 @@ class TodoDetailsVC: UIViewController {
   }
 
   private func setupStartDateRow(){
-    let _startDateLabel = layoutDateLabels(label: startDateLabel, color: TLColours.TodoPalette.green.color)
     let calendarIcon =  UIImageView(image: UIImage(systemName: "calendar"))
 
+    startDatePicker.datePickerMode = .date
+    startDatePicker.addTarget(self, action: #selector(startDateChanged), for: .valueChanged)
+
+    calendarIcon.tintColor = .label
+    calendarIcon.translatesAutoresizingMaskIntoConstraints = false
+    startDateLabel.translatesAutoresizingMaskIntoConstraints = false
+
+    startDateLabel.inputView = startDatePicker
+
     container.addSubview(calendarIcon)
-    container.addSubview(_startDateLabel)
-    
-    viewIdentifier["startDateView"] = _startDateLabel
+    container.addSubview(startDateLabel)
 
     UIHelper.setIconSizeContraints(for: calendarIcon,size: ICON_SIZE )
 
-    guard let _descriptionTextInput = viewIdentifier["descriptionTextInput"] else {return}
+
     NSLayoutConstraint.activate([
-      calendarIcon.topAnchor.constraint(equalTo: _descriptionTextInput.bottomAnchor, constant: TLSpacing.s16.size),
+      calendarIcon.topAnchor.constraint(equalTo: descriptionTextInput.bottomAnchor, constant: sectionSpacing),
       calendarIcon.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-      _startDateLabel.leadingAnchor.constraint(equalTo: calendarIcon.trailingAnchor, constant: TLSpacing.s8.size),
-      _startDateLabel.centerYAnchor.constraint(equalTo: calendarIcon.centerYAnchor)
+      startDateLabel.leadingAnchor.constraint(equalTo: calendarIcon.trailingAnchor, constant: TLSpacing.s16.size),
+      startDateLabel.centerYAnchor.constraint(equalTo: calendarIcon.centerYAnchor)
+    ])
+  }
+
+  private func createTimeline(){
+    let icon = UIImageView(image: UIImage(systemName: "line.3.horizontal.decrease"))
+    icon.translatesAutoresizingMaskIntoConstraints = false
+    icon.tintColor = .label
+    
+    simpleTimelineView.translatesAutoresizingMaskIntoConstraints = false
+
+    container.addSubview(simpleTimelineView)
+    container.addSubview(icon)
+
+    simpleTimelineView.buildTimeline(with: timelineRowViews)
+    UIHelper.setIconSizeContraints(for: icon, size: ICON_SIZE)
+
+    NSLayoutConstraint.activate([
+      simpleTimelineView.topAnchor.constraint(equalTo: startDateLabel.bottomAnchor, constant: sectionSpacing),
+      simpleTimelineView.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: TLSpacing.s16.size),
+      simpleTimelineView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: TLSpacing.s16.size),
+
+      icon.centerYAnchor.constraint(equalTo: simpleTimelineView.centerYAnchor),
+      icon.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+
     ])
   }
 
   private func setupEndDateRow(){
-    let _endDateLabel = layoutDateLabels(label: endDateLabel, color: TLColours.TodoPalette.orange.color)
     let calendarIcon =  UIImageView(image: UIImage(systemName: "calendar"))
 
-    viewIdentifier["endDateLabel"] = _endDateLabel
+    endDatePicker.datePickerMode = .date
+    endDatePicker.addTarget(self, action: #selector(endDateChanged), for: .valueChanged)
+
+    endDateLabel.inputView = endDatePicker
+
+    calendarIcon.translatesAutoresizingMaskIntoConstraints = false
+    calendarIcon.tintColor = .label
 
     container.addSubview(calendarIcon)
-    container.addSubview(_endDateLabel)
-
-    guard let startLabelView = viewIdentifier["startDateView"] else {return}
+    container.addSubview(endDateLabel)
 
     UIHelper.setIconSizeContraints(for: calendarIcon,size: ICON_SIZE)
 
     NSLayoutConstraint.activate([
-      calendarIcon.centerYAnchor.constraint(equalTo: _endDateLabel.centerYAnchor),
+      calendarIcon.centerYAnchor.constraint(equalTo: endDateLabel.centerYAnchor),
       calendarIcon.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-      _endDateLabel.leadingAnchor.constraint(equalTo: calendarIcon.trailingAnchor, constant: TLSpacing.s8.size),
-      _endDateLabel.topAnchor.constraint(equalTo: startLabelView.bottomAnchor, constant: TLSpacing.s24.size)
+      endDateLabel.leadingAnchor.constraint(equalTo: calendarIcon.trailingAnchor, constant: TLSpacing.s16.size),
+      endDateLabel.topAnchor.constraint(equalTo: simpleTimelineView.bottomAnchor, constant: sectionSpacing)
     ])
 
   }
 
-  private func layoutDateLabels(label: UILabel, color: UIColor) -> UIView {
-    let padding = TLSpacing.s8.size
-    let containerView = UIView(frame: .zero)
+  @objc private func endDateChanged(datePicker: UIDatePicker){
+    DispatchQueue.main.async {
+      self.endDateLabel.text = Date.dateFormatter(from: datePicker.date.timeIntervalSince1970 * 1000)
+      self.view.endEditing(true)
+    }
+  }
 
-    containerView.translatesAutoresizingMaskIntoConstraints = false
-    label.translatesAutoresizingMaskIntoConstraints = false
+  @objc private func startDateChanged(datePicker: UIDatePicker){
+    DispatchQueue.main.async {
+      self.startDateLabel.text = Date.dateFormatter(from: datePicker.date.timeIntervalSince1970 * 1000)
+      self.view.endEditing(true)
+    }
+  }
 
-    containerView.addSubview(label)
-    containerView.backgroundColor = color
-    containerView.layer.cornerRadius = padding
+  private func setuptextChangeTodoStatusButton() {
+    textChangeTodoStatusButton.translatesAutoresizingMaskIntoConstraints = false
+    textChangeTodoStatusButton.textAlignment = .center
+    textChangeTodoStatusButton.isUserInteractionEnabled = true
+
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(triggerMenu))
+    textChangeTodoStatusButton.addGestureRecognizer(tapGesture)
+
+    container.addSubview(textChangeTodoStatusButton)
+
     NSLayoutConstraint.activate([
-      label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
-      label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-      label.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-      label.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding)
+      textChangeTodoStatusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -TLSpacing.s16.size),
+      textChangeTodoStatusButton.centerXAnchor.constraint(equalTo: container.centerXAnchor)
     ])
+  }
 
-    containerView.heightAnchor.constraint(equalToConstant: 57).isActive = true
+  @objc func triggerMenu() {
+    let alert = UIAlertController(title: "Update status", message: "This will Change the status of the todo", preferredStyle: .actionSheet)
 
-    return containerView
+    alert.addAction(UIAlertAction(title: "Todo", style: .default, handler: {_ in}))
+    alert.addAction(UIAlertAction(title: "In Progress", style: .default, handler: {_ in}))
+    alert.addAction(UIAlertAction(title: "Completed", style: .default, handler: {_ in}))
+    alert.addAction(UIAlertAction(title: "On Hold", style: .default, handler: {_ in}))
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {_ in}))
+    present(alert, animated: true, completion: nil)
   }
 
 }
 
-
+extension TodoDetailsVC {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    print(scrollView.contentOffset.y)
+  }
+}
 
 
 #Preview {
