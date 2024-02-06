@@ -35,6 +35,10 @@
 		9035223D2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */; };
 		9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */; };
 		903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522422B6FA072008A8D4B /* Date+Ext.swift */; };
+		903522452B6FD694008A8D4B /* TLSimpleTimelineRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */; };
+		9067A38D2B70BBF700ADB4F6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38C2B70BBF700ADB4F6 /* Utils.swift */; };
+		9067A38F2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */; };
+		9067A3912B727B1100ADB4F6 /* TLCustomDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */; };
 		9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212A2B644DE1007814A8 /* AppDelegate.swift */; };
 		9087212D2B644DE1007814A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9087212C2B644DE1007814A8 /* SceneDelegate.swift */; };
 		908721342B644DE3007814A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908721332B644DE3007814A8 /* Assets.xcassets */; };
@@ -84,6 +88,10 @@
 		9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedTodoSectionView.swift; sourceTree = "<group>"; };
 		9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyChangedSectionView.swift; sourceTree = "<group>"; };
 		903522422B6FA072008A8D4B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineRowView.swift; sourceTree = "<group>"; };
+		9067A38C2B70BBF700ADB4F6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineView.swift; sourceTree = "<group>"; };
+		9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCustomDateTextField.swift; sourceTree = "<group>"; };
 		908721272B644DE1007814A8 /* timelinapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelinapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9087212A2B644DE1007814A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9087212C2B644DE1007814A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 			children = (
 				903522262B6D29D6008A8D4B /* TLRecentlyChangedSection.swift */,
 				903522292B6D29D6008A8D4B /* TLPinnedTodosSection.swift */,
+				9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */,
 			);
 			path = molecules;
 			sourceTree = "<group>";
@@ -156,6 +165,8 @@
 				903522272B6D29D6008A8D4B /* TLTodoCard.swift */,
 				9035223C2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift */,
 				9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */,
+				903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */,
+				9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */,
 			);
 			path = organisms;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 				9088A3E12B6450E900A91E92 /* Constants.swift */,
 				9088A3E22B6450E900A91E92 /* PreviewUI.swift */,
 				9088A3E32B6450E900A91E92 /* TLPresentableView.swift */,
+				9067A38C2B70BBF700ADB4F6 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,6 +427,7 @@
 				903522252B6D29CF008A8D4B /* TLHomeVCEmptyState.swift in Sources */,
 				903522312B6D29D8008A8D4B /* TLCarousel+Ext.swift in Sources */,
 				9088A3EE2B6450F400A91E92 /* NetworkManager.swift in Sources */,
+				9067A38F2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift in Sources */,
 				903521FB2B6D1E32008A8D4B /* LoginVC.swift in Sources */,
 				903522012B6D1E3E008A8D4B /* UIViewController+Ext.swift in Sources */,
 				9088A3DE2B6450E000A91E92 /* HomeVC.swift in Sources */,
@@ -425,6 +438,7 @@
 				903522042B6D1E3E008A8D4B /* UIButton+Ext.swift in Sources */,
 				903522212B6D29C3008A8D4B /* TLAvatar.swift in Sources */,
 				9088A3E02B6450E400A91E92 /* UIColor+Ext.swift in Sources */,
+				9067A38D2B70BBF700ADB4F6 /* Utils.swift in Sources */,
 				903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */,
 				903522372B6D2DDB008A8D4B /* TLTodoCardCell.swift in Sources */,
 				903522232B6D29C7008A8D4B /* TLLoginFormView.swift in Sources */,
@@ -435,6 +449,7 @@
 				9035220F2B6D1E89008A8D4B /* UIHelper.swift in Sources */,
 				9035221F2B6D29C0008A8D4B /* TLTextInput.swift in Sources */,
 				9035221D2B6D29C0008A8D4B /* TLButton.swift in Sources */,
+				903522452B6FD694008A8D4B /* TLSimpleTimelineRowView.swift in Sources */,
 				9088A3E62B6450E900A91E92 /* TLPresentableView.swift in Sources */,
 				903522122B6D1F38008A8D4B /* AuthAPI.swift in Sources */,
 				9035223D2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift in Sources */,
@@ -442,6 +457,7 @@
 				903522032B6D1E3E008A8D4B /* String+Ext.swift in Sources */,
 				9035221C2B6D29C0008A8D4B /* TLTypography.swift in Sources */,
 				9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */,
+				9067A3912B727B1100ADB4F6 /* TLCustomDateTextField.swift in Sources */,
 				903522022B6D1E3E008A8D4B /* ResetTamic+Ext.swift in Sources */,
 				9035221E2B6D29C0008A8D4B /* TLBadge.swift in Sources */,
 				903522332B6D29D8008A8D4B /* TLTodoCard.swift in Sources */,

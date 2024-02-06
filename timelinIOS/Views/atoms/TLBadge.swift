@@ -1,14 +1,13 @@
 import UIKit
-import SwiftUI
+
 
 class TLBadge: UIView {
     enum BadgeVariant {
         case colored, simple
     }
-    
-    var status: TodoStatus!
-    var label: String!
-    var variant: BadgeVariant!
+
+  lazy var badgeStatus: TLTypography = TLTypography(title: "", fontSize: .body, colour: TLColours.Primary.p50.color, weight: .bold)
+   var status: TodoStatus!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,42 +18,90 @@ class TLBadge: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(status: TodoStatus, label: String, variant: BadgeVariant){
-        self.init(frame: .zero)
-        self.status = status
-        self.label = label
-        self.variant = variant
+    convenience init(status: TodoStatus, variant: BadgeVariant){
+      self.init(frame: .zero)
+      self.status = status
+      setupElements(by: status, and: variant)
     }
     
     private func configure(){
-        layer.cornerRadius = .infinity
-        backgroundColor = .systemRed
-        translatesAutoresizingMaskIntoConstraints = false
+      let padding = TLSpacing.s8.size
 
-        NSLayoutConstraint.activate([
-            self.widthAnchor.constraint(equalToConstant: 200),
-            self.heightAnchor.constraint(equalToConstant: 200)
-        ])
-        
-        frame.size = CGSize(width: 100, height: 200)
-        self.backgroundColor = .systemRed
-        
-        let label = UILabel()
-        label.text = "Something"
-        addSubview(label)
-        
+      layer.cornerRadius = TLSpacing.s4.size
+      translatesAutoresizingMaskIntoConstraints = false
+
+      addSubview(badgeStatus)
+
+      UIHelper.toCenter(this: badgeStatus, into: self) {
+        return (padding, padding, padding, -padding)
+      }
     }
+  
+  private func setupElements(by status: TodoStatus, and variant: BadgeVariant = .colored){
+    badgeStatus.textAlignment = .center
+    badgeStatus.text = "\(String(describing: status))".uppercased()
+
+    if variant == .colored {
+      badgeStatus.textColor = textColorBy(status: status)
+      backgroundColor = bgColorBy(status: status)
+    } else {
+      badgeStatus.textColor = TLColours.Neutrals.dark.color
+      backgroundColor = TLColours.Neutrals.white.color
+      layer.cornerRadius = 8
+    }
+  }
+
+   private func bgColorBy(status: TodoStatus) -> UIColor {
+    switch status {
+      case .completed :
+        return BadgeUIColor.completed.color
+      case .on_going:
+        return BadgeUIColor.on_going.color
+      case .on_hold:
+        return BadgeUIColor.on_hold.color
+      case .todo:
+        return BadgeUIColor.todo.color
+    }
+  }
+
+  private func textColorBy(status: TodoStatus) -> UIColor {
+    switch status {
+      case .completed :
+        return BadgeTextColor.completed.color
+      case .on_going:
+        return BadgeTextColor.on_going.color
+      case .on_hold:
+        return BadgeTextColor.on_hold.color
+      case .todo:
+        return BadgeTextColor.todo.color
+    }
+  }
+
+  private func setStatus(to newStatus: TodoStatus) {
+    setupElements(by: newStatus)
+  }
 }
 
 
 #if DEBUG
-struct TLBadgePreview: PreviewProvider {
-    static var previews: some View {
-        TLPresentableView {
-            let badge = TLBadge(status: .completed, label: "Completed", variant: .colored)
-            let preview = PreviewUI(subViewsArranged: [badge])
-            return preview
-        }
-    }
+import SwiftUI
+
+#Preview("Colored"){
+  let badge = TLBadge(status: .completed, variant: .colored)
+
+  return badge
+}
+
+#Preview("Simple"){
+  let badge = TLBadge(status: .completed, variant: .simple)
+  let view = UIView()
+  view.backgroundColor = .gray
+  view.addSubview(badge)
+
+  NSLayoutConstraint.activate([
+    badge.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+    badge.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+  ])
+  return view
 }
 #endif
