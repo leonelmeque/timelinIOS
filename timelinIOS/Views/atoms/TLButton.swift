@@ -16,9 +16,14 @@ enum ButtonSize {
 
 class TLButton: UIButton {
 
-    var variant: ButtonVariant!
+  var variant: ButtonVariant! {
+    didSet {
+      configureVariant()
+    }
+  }
     var size: ButtonSize!
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -47,7 +52,6 @@ class TLButton: UIButton {
         
         configureSize()
         configureVariant()
-       
     }
     
     private func configure(){
@@ -89,7 +93,11 @@ class TLButton: UIButton {
                 break
         }
     }
-    
+
+    func setVariant(_ variant: ButtonVariant) {
+         self.variant = variant
+     }
+
     private func fadeTo(_ alpha:CGFloat, duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
             self.alpha = alpha

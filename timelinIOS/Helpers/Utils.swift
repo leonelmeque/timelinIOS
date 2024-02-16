@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class Utils {
   // Is important to note that the timestamp is in milliseconds 
@@ -13,9 +14,5 @@ class Utils {
     }
 
     return false
-  }
-
-  static func motivationMessage() {
-
   }
 }
