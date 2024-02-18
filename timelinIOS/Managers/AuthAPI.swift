@@ -16,25 +16,27 @@ extension NetworkManager {
         }
     }
 
-    func signInWith(email: String, password: String, completion: @escaping (Result<User, FirebaseError>) -> Void) {
+    func signInWith(email: String, password: String) async throws -> User {
+      return try await withCheckedThrowingContinuation { continuation in
         Auth.auth().signIn(withEmail: email, password: password) {
             [weak self] _ , error in
             guard self != nil else {return}
-            
+
             if let error = error {
-                completion(.failure(.failedToSignin(error.localizedDescription)))
+              continuation.resume(throwing: FirebaseError.failedToSignin(error.localizedDescription))
                 print("An error occured \(error)")
                 return
             }
-            
+
             guard let currentUser = Auth.auth().currentUser else {
-                completion(.failure(.userNotFound))
+              continuation.resume(throwing: FirebaseError.userNotFound)
                 return}
-            
+
             self?.authUser = currentUser
-            
-            completion(.success(currentUser))
+
+          continuation.resume(returning: currentUser)
         }
+      }
     }
     
     func signUpWith(email: String, password: String) {

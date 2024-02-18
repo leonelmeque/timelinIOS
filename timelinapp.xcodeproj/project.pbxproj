@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902B36C32B7A7AD80082AE96 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902B36C22B7A7AD80082AE96 /* LoginViewModel.swift */; };
+		902B36C52B7AE5E80082AE96 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902B36C42B7AE5E80082AE96 /* UITextField+Ext.swift */; };
+		902B36C72B7B69620082AE96 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902B36C62B7B69620082AE96 /* UINavigationController+Ext.swift */; };
 		903521FB2B6D1E32008A8D4B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903521F92B6D1E32008A8D4B /* LoginVC.swift */; };
 		903521FC2B6D1E32008A8D4B /* TodoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903521FA2B6D1E32008A8D4B /* TodoDetailsVC.swift */; };
 		903522012B6D1E3E008A8D4B /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903521FD2B6D1E3E008A8D4B /* UIViewController+Ext.swift */; };
@@ -36,6 +39,7 @@
 		9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */; };
 		903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522422B6FA072008A8D4B /* Date+Ext.swift */; };
 		903522452B6FD694008A8D4B /* TLSimpleTimelineRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */; };
+		905E37E02B7E13A900AC3247 /* TLMiniBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */; };
 		9067A38D2B70BBF700ADB4F6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38C2B70BBF700ADB4F6 /* Utils.swift */; };
 		9067A38F2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */; };
 		9067A3912B727B1100ADB4F6 /* TLCustomDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */; };
@@ -60,6 +64,9 @@
 		1FC00604571629FC29D4DD16 /* Pods-timelinapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timelinapp.debug.xcconfig"; path = "Target Support Files/Pods-timelinapp/Pods-timelinapp.debug.xcconfig"; sourceTree = "<group>"; };
 		41CCECF2F11BC716A06DB16F /* Pods_timelinapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_timelinapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		642FF47D0FD4291BB5361240 /* Pods-timelinapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-timelinapp.release.xcconfig"; path = "Target Support Files/Pods-timelinapp/Pods-timelinapp.release.xcconfig"; sourceTree = "<group>"; };
+		902B36C22B7A7AD80082AE96 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = timelinIOS/Extensions/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		902B36C42B7AE5E80082AE96 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		902B36C62B7B69620082AE96 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		903521F92B6D1E32008A8D4B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		903521FA2B6D1E32008A8D4B /* TodoDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailsVC.swift; sourceTree = "<group>"; };
 		903521FD2B6D1E3E008A8D4B /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyChangedSectionView.swift; sourceTree = "<group>"; };
 		903522422B6FA072008A8D4B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineRowView.swift; sourceTree = "<group>"; };
+		905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLMiniBanner.swift; sourceTree = "<group>"; };
 		9067A38C2B70BBF700ADB4F6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineView.swift; sourceTree = "<group>"; };
 		9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCustomDateTextField.swift; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 				903522262B6D29D6008A8D4B /* TLRecentlyChangedSection.swift */,
 				903522292B6D29D6008A8D4B /* TLPinnedTodosSection.swift */,
 				9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */,
+				905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */,
 			);
 			path = molecules;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 				903521FD2B6D1E3E008A8D4B /* UIViewController+Ext.swift */,
 				9088A3DF2B6450E400A91E92 /* UIColor+Ext.swift */,
 				903522422B6FA072008A8D4B /* Date+Ext.swift */,
+				902B36C42B7AE5E80082AE96 /* UITextField+Ext.swift */,
+				902B36C62B7B69620082AE96 /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +297,7 @@
 		9088A4012B64525400A91E92 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				902B36C22B7A7AD80082AE96 /* LoginViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -423,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				903522162B6D1F5F008A8D4B /* Todo.swift in Sources */,
+				902B36C52B7AE5E80082AE96 /* UITextField+Ext.swift in Sources */,
 				903521FC2B6D1E32008A8D4B /* TodoDetailsVC.swift in Sources */,
 				903522252B6D29CF008A8D4B /* TLHomeVCEmptyState.swift in Sources */,
 				903522312B6D29D8008A8D4B /* TLCarousel+Ext.swift in Sources */,
@@ -446,16 +459,19 @@
 				9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */,
 				9035222D2B6D29D8008A8D4B /* TLPinnedTodosSection.swift in Sources */,
 				903522322B6D29D8008A8D4B /* TLNewTodoView.swift in Sources */,
+				902B36C32B7A7AD80082AE96 /* LoginViewModel.swift in Sources */,
 				9035220F2B6D1E89008A8D4B /* UIHelper.swift in Sources */,
 				9035221F2B6D29C0008A8D4B /* TLTextInput.swift in Sources */,
 				9035221D2B6D29C0008A8D4B /* TLButton.swift in Sources */,
 				903522452B6FD694008A8D4B /* TLSimpleTimelineRowView.swift in Sources */,
+				905E37E02B7E13A900AC3247 /* TLMiniBanner.swift in Sources */,
 				9088A3E62B6450E900A91E92 /* TLPresentableView.swift in Sources */,
 				903522122B6D1F38008A8D4B /* AuthAPI.swift in Sources */,
 				9035223D2B6DAFA1008A8D4B /* PinnedTodoSectionView.swift in Sources */,
 				9088A3E52B6450E900A91E92 /* PreviewUI.swift in Sources */,
 				903522032B6D1E3E008A8D4B /* String+Ext.swift in Sources */,
 				9035221C2B6D29C0008A8D4B /* TLTypography.swift in Sources */,
+				902B36C72B7B69620082AE96 /* UINavigationController+Ext.swift in Sources */,
 				9087212B2B644DE1007814A8 /* AppDelegate.swift in Sources */,
 				9067A3912B727B1100ADB4F6 /* TLCustomDateTextField.swift in Sources */,
 				903522022B6D1E3E008A8D4B /* ResetTamic+Ext.swift in Sources */,

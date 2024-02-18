@@ -5,4 +5,6 @@ target 'timelinapp' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
