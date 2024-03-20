@@ -140,10 +140,21 @@ class LoginVC: UIViewController {
       }
   }
 
+  func navigateToHomeScreen(_ value: Bool) {
+    if value {
+      DispatchQueue.main.async {
+        let tabBarNavigator = TabBarNavigator()
+        self.navigationController?.pushViewController(tabBarNavigator, animated: true)
+        self.navigationController?.removeViewController(LoginVC.self)
+      }
+    }
+  }
+
   func createBindingViewWithViewModel() {
     let output = loginViewModel.bind(.init(username: usernameTextInput.rx.text.asObservable(), password: passwordTextInput.rx.text.asObservable(), didTap: loginButton.rx.tap.asObservable()))
 
     output.enableLoginButton.bind(to: loginButton.rx.isEnabled).disposed(by: loginViewModel.bag)
+
     output.enableLoginButton.subscribe {value in
       if value {
         self.loginButton.setVariant(.primary)
@@ -152,22 +163,10 @@ class LoginVC: UIViewController {
       }
     }.disposed(by: loginViewModel.bag)
 
-    output.loginIsSuccess.subscribe { event in
-      switch event {
-      case .next(let isSuccess):
-        if isSuccess {
-          DispatchQueue.main.async {
-            let tabBarNavigator = TabBarNavigator()
-            self.navigationController?.pushViewController(tabBarNavigator, animated: true)
-            self.navigationController?.removeViewController(LoginVC.self)
-          }
-        }
-      case .error(_):
-        print("Error happened")
-      case .completed:
-        print("completed action")
-      }
-    }.disposed(by: loginViewModel.bag )
+    output.loginIsSuccess.subscribe(onNext: { [weak self] isSuccess in
+      self?.navigateToHomeScreen(isSuccess)
+    })
+    .disposed(by: loginViewModel.bag )
 
     output.showLoginErrorModal.subscribe { showBanner in
         if showBanner {
