@@ -12,4 +12,15 @@ extension Date {
 
     return formattedDate
   }
+
+  static func timestamp(from dateString: String) -> Double {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "d MMM yyyy"
+      dateFormatter.locale = Locale(identifier: "en_US")
+
+    guard let date = dateFormatter.date(from: dateString) else {return Date.now.timeIntervalSince1970}
+      let timestamp = date.timeIntervalSince1970 * 1000
+      return timestamp
+
+  }
 }
