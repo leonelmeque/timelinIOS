@@ -9,7 +9,6 @@ class Utils {
     let currentDate = Date()
 
     if let diff = calendar.dateComponents([.day], from: initialDate, to: currentDate).day {
-      print(diff)
       return diff < 5
     }
 
