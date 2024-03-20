@@ -1,5 +1,7 @@
 import UIKit
 import SwiftUI
+import RxSwift
+import RxCocoa
 
 class TLTypography: UILabel {
     

@@ -1,12 +1,13 @@
 import UIKit
-
+import RxSwift
+import RxCocoa
 
 class TLBadge: UIView {
     enum BadgeVariant {
         case colored, simple
     }
 
-  lazy var badgeStatus: TLTypography = TLTypography(title: "", fontSize: .body, colour: TLColours.Primary.p50.color, weight: .bold)
+  lazy var badgeStatus: TLTypography = TLTypography(title: "TODO", fontSize: .body, colour: TLColours.Primary.p50.color, weight: .bold)
    var status: TodoStatus!
 
     override init(frame: CGRect) {
