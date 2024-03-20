@@ -22,7 +22,8 @@ class TLSimpleTimelineView: UIView {
 
   func buildTimeline(with model: [TLSimpleTimelineRowView]){
     let lastThree = model.count - 3
-    let lastThreeUpdates = model[lastThree...model.count - 1]
+    print(lastThree)
+    let lastThreeUpdates = lastThree <= 0 ? model : Array(model[lastThree...model.count - 1])
     var auxEvent: TLSimpleTimelineRowView!
 
     for (index, event) in lastThreeUpdates.enumerated() {
@@ -57,8 +58,9 @@ class TLSimpleTimelineView: UIView {
 
     if lastThreeUpdates.count > 1 {
       buildHorizontalLine(from: lastThreeUpdates.first ?? nil, to: lastThreeUpdates.last ?? nil)
-      addShowMoreTextBellow(this: lastThreeUpdates.last ?? nil)
     }
+
+    addShowMoreTextBellow(this: lastThreeUpdates.last ?? nil)
   }
 
   private func addShowMoreTextBellow(this event: TLSimpleTimelineRowView?) {
