@@ -39,7 +39,9 @@
 		9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */; };
 		903522432B6FA072008A8D4B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522422B6FA072008A8D4B /* Date+Ext.swift */; };
 		903522452B6FD694008A8D4B /* TLSimpleTimelineRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */; };
+		904A33A82B9701F90061C2B0 /* TLTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A33A72B9701F90061C2B0 /* TLTextAreaView.swift */; };
 		905E37E02B7E13A900AC3247 /* TLMiniBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */; };
+		905E37E22B829AEB00AC3247 /* TodoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E37E12B829AEB00AC3247 /* TodoDetailsViewModel.swift */; };
 		9067A38D2B70BBF700ADB4F6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38C2B70BBF700ADB4F6 /* Utils.swift */; };
 		9067A38F2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */; };
 		9067A3912B727B1100ADB4F6 /* TLCustomDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */; };
@@ -57,6 +59,7 @@
 		9088A3EA2B6450EF00A91E92 /* TLColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E82B6450EF00A91E92 /* TLColours.swift */; };
 		9088A3EC2B6450EF00A91E92 /* TLSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3E92B6450EF00A91E92 /* TLSpacing.swift */; };
 		9088A3EE2B6450F400A91E92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088A3ED2B6450F400A91E92 /* NetworkManager.swift */; };
+		90A39E722BAAD93C007AE4BE /* TodoDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A39E712BAAD93C007AE4BE /* TodoDetailsViewModelProtocol.swift */; };
 		EDB243D035279AC25E0D0FE9 /* Pods_timelinapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CCECF2F11BC716A06DB16F /* Pods_timelinapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +99,9 @@
 		9035223E2B6DB002008A8D4B /* RecentlyChangedSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyChangedSectionView.swift; sourceTree = "<group>"; };
 		903522422B6FA072008A8D4B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		903522442B6FD694008A8D4B /* TLSimpleTimelineRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineRowView.swift; sourceTree = "<group>"; };
+		904A33A72B9701F90061C2B0 /* TLTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTextAreaView.swift; sourceTree = "<group>"; };
 		905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLMiniBanner.swift; sourceTree = "<group>"; };
+		905E37E12B829AEB00AC3247 /* TodoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodoDetailsViewModel.swift; path = timelinIOS/Controllers/TodoDetails/TodoDetailsViewModel.swift; sourceTree = SOURCE_ROOT; };
 		9067A38C2B70BBF700ADB4F6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9067A38E2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSimpleTimelineView.swift; sourceTree = "<group>"; };
 		9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCustomDateTextField.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 		9088A3E82B6450EF00A91E92 /* TLColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLColours.swift; sourceTree = "<group>"; };
 		9088A3E92B6450EF00A91E92 /* TLSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSpacing.swift; sourceTree = "<group>"; };
 		9088A3ED2B6450F400A91E92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		90A39E712BAAD93C007AE4BE /* TodoDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 				903522292B6D29D6008A8D4B /* TLPinnedTodosSection.swift */,
 				9067A3902B727B1100ADB4F6 /* TLCustomDateTextField.swift */,
 				905E37DF2B7E13A900AC3247 /* TLMiniBanner.swift */,
+				904A33A72B9701F90061C2B0 /* TLTextAreaView.swift */,
 			);
 			path = molecules;
 			sourceTree = "<group>";
@@ -240,8 +247,8 @@
 		9088A3FC2B6451D800A91E92 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				90D1DFAC2B93368200C62A0B /* TodoDetails */,
 				903521F92B6D1E32008A8D4B /* LoginVC.swift */,
-				903521FA2B6D1E32008A8D4B /* TodoDetailsVC.swift */,
 				9088A3DC2B6450E000A91E92 /* HomeVC.swift */,
 				9088A3DB2B6450DF00A91E92 /* TabBarNavigator.swift */,
 			);
@@ -309,6 +316,16 @@
 				9088A3E92B6450EF00A91E92 /* TLSpacing.swift */,
 			);
 			path = Tokens;
+			sourceTree = "<group>";
+		};
+		90D1DFAC2B93368200C62A0B /* TodoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				903521FA2B6D1E32008A8D4B /* TodoDetailsVC.swift */,
+				905E37E12B829AEB00AC3247 /* TodoDetailsViewModel.swift */,
+				90A39E712BAAD93C007AE4BE /* TodoDetailsViewModelProtocol.swift */,
+			);
+			path = TodoDetails;
 			sourceTree = "<group>";
 		};
 		D3D748E831C4983F1678C45F /* Frameworks */ = {
@@ -438,6 +455,7 @@
 				902B36C52B7AE5E80082AE96 /* UITextField+Ext.swift in Sources */,
 				903521FC2B6D1E32008A8D4B /* TodoDetailsVC.swift in Sources */,
 				903522252B6D29CF008A8D4B /* TLHomeVCEmptyState.swift in Sources */,
+				90A39E722BAAD93C007AE4BE /* TodoDetailsViewModelProtocol.swift in Sources */,
 				903522312B6D29D8008A8D4B /* TLCarousel+Ext.swift in Sources */,
 				9088A3EE2B6450F400A91E92 /* NetworkManager.swift in Sources */,
 				9067A38F2B70FBE500ADB4F6 /* TLSimpleTimelineView.swift in Sources */,
@@ -447,6 +465,7 @@
 				9088A3E42B6450E900A91E92 /* Constants.swift in Sources */,
 				903522132B6D1F38008A8D4B /* TodoAPI.swift in Sources */,
 				9088A3EA2B6450EF00A91E92 /* TLColours.swift in Sources */,
+				905E37E22B829AEB00AC3247 /* TodoDetailsViewModel.swift in Sources */,
 				9035222E2B6D29D8008A8D4B /* TLCarousel.swift in Sources */,
 				903522042B6D1E3E008A8D4B /* UIButton+Ext.swift in Sources */,
 				903522212B6D29C3008A8D4B /* TLAvatar.swift in Sources */,
@@ -458,6 +477,7 @@
 				9088A3EC2B6450EF00A91E92 /* TLSpacing.swift in Sources */,
 				9035223F2B6DB002008A8D4B /* RecentlyChangedSectionView.swift in Sources */,
 				9035222D2B6D29D8008A8D4B /* TLPinnedTodosSection.swift in Sources */,
+				904A33A82B9701F90061C2B0 /* TLTextAreaView.swift in Sources */,
 				903522322B6D29D8008A8D4B /* TLNewTodoView.swift in Sources */,
 				902B36C32B7A7AD80082AE96 /* LoginViewModel.swift in Sources */,
 				9035220F2B6D1E89008A8D4B /* UIHelper.swift in Sources */,
