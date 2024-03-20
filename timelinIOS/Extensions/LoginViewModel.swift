@@ -36,7 +36,7 @@ class LoginViewModel {
       return self.onSignInWith(username: username, password: password ).catchAndReturn(false)
     }
 
-    let showLoginErrorModal = Observable.merge(loginIsSuccess.map{!$0}, usernameAndPasswordHasChanged)
+    let showLoginErrorModal = Observable.merge(loginIsSuccess.map{ !$0 }, usernameAndPasswordHasChanged)
 
     return .init(enableLoginButton: enableLoginButton, showLoginErrorModal: showLoginErrorModal, loginIsSuccess: loginIsSuccess )
   }
